@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Birdclopedia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/static/images/bird-icon.png" alt="Bird Icon" class="navbar-icon">
+            <h1 class="text-2xl font-bold">Birdclopedia</h1>
+        </div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/tree">Tree</a>
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <div class="min-h-screen bg-cover bg-center" style="background-image: url('/static/images/bg3.jpg');">
+        <div class="bg-black bg-opacity-50 min-h-screen py-12">
+            <div class="container mx-auto px-4">
+                <div class="bg-white rounded-lg shadow-xl p-8 max-w-10xl mx-auto">
+                    <h1 class="text-3xl font-bold mb-6 text-gray-800">Welcome, {{ user['username'] }} !</h1>
+                    
+                    <form method="POST" action="{{ url_for('profile') }}" class="space-y-6">
+                        <div>
+                            <label for="bio" class="block text-lg font-medium text-gray-700 mb-2">Bio</label>
+                            <textarea 
+                                name="bio" 
+                                id="bio" 
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                rows="4"
+                                placeholder="Tell us about yourself">{{ user['bio'] }}</textarea>
+                        </div>
+
+                        <div>
+                            <label for="favorites" class="block text-lg font-medium text-gray-700 mb-2">Favorite Birds</label>
+                            <input 
+                                type="text" 
+                                name="favorites" 
+                                id="favorites" 
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                value="{{ user['favorites'] }}"
+                                placeholder="Enter your favorite birds...">
+                        </div>
+
+                        <div class="flex justify-between items-center mt-8">
+                            <button type="submit" class="btn-primary">
+                                Update Profile
+                            </button>
+                            <a href="{{ url_for('logout') }}" class="text-red-600 hover:text-red-800 font-medium">
+                                Logout
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Birdclopedia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

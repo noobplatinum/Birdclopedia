@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkeys</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        .background-top {
+        background: url('/static/images/turkey1.jpg') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+    }
+
+    .background-bottom {
+        background: url('/static/images/turkey2.jpg') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/static/images/bird-icon.png" alt="Bird Icon" class="navbar-icon">
+            <h1 class="text-2xl font-bold">Birdclopedia</h1>
+        </div>
+        <div>
+            <a href="/" class="text-white">Home</a>
+            <a href="/tree" class="text-white">Tree</a>
+            <a href="/profile" class="text-white">Profile</a>
+            <a href="/logout" class="text-white">Logout</a>
+        </div>
+    </nav>
+
+    <header class="background-top"></header>
+    
+    <main class="w-full my-8 p-6 rounded-lg relative" style="background: url('/static/images/grass.jpg') no-repeat center center; background-size: cover;">
+        <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-white">Turkeys</h1>
+                <h2 class="text-xl italic text-white">Phasianidae</h2>
+            </div>
+            <hr class="mb-8">
+            <div class="grid grid-cols-3 gap-8 text-center">
+                <!-- Column 1: Description -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Description</h2>
+                    <p class="text-white text-lg">
+                        Turkeys are large, social birds known for their striking appearance and behavior. Wild Turkeys are agile on the ground, capable of running at speeds up to 20 mph, and can fly short distances at speeds of up to 55 mph. They are foragers, feeding on a mix of nuts, seeds, insects, and small reptiles. Males, known as toms, display elaborate courtship dances and gobbles to attract females, or hens.
+                    </p>
+                </div>
+                <!-- Column 2: Specifications -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Specifications</h2>
+                    <ul class="list-disc list-inside text-white text-lg">
+                        <li><strong>Scientific Name:</strong> Meleagris gallopavo</li>
+                        <li><strong>Length:</strong> 100-125 cm</li>
+                        <li><strong>Weight:</strong> 5-11 kg</li>
+                        <li><strong>Coloration:</strong> Iridescent bronze and green body feathers with a bare, colorful head that can change shades of red, blue, and white depending on mood</li>
+                        <li><strong>Habitat:</strong> Forests, grasslands, and agricultural fields, especially in North America</li>
+                        <li><strong>Defining Feature:</strong> Large size, fan-shaped tail, and a distinctive fleshy "snood" hanging over the beak</li>
+                    </ul>
+                </div>
+                <!-- Column 3: Fun Facts -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Fun Facts</h2>
+                    <div class="bg-transparent p-4 rounded-lg shadow-md mb-4 text-white text-lg">
+                        <h3 class="text-xl font-bold mb-2">Fact 1</h3>
+                        <p>The Wild Turkey was once considered for the national bird of the United States, as suggested by Benjamin Franklin, who admired its resourcefulness and character.</p>
+                    </div>
+                    <div class="bg-transparent p-4 rounded-lg shadow-md text-white text-lg">
+                        <h3 class="text-xl font-bold mb-2">Fact 2</h3>
+                        <p>Turkeys have excellent vision, with a field of view of about 270 degrees, and can see in color, making them difficult to sneak up on.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="background-bottom">
+        <a href="/tree" class="btn">
+            <img src="/static/images/tree-logo.png" alt="Tree Icon">
+            <span>Back to Tree</span>
+        </a>
+        <a href="/tree/gamebirds" class="btn">
+            <img src="/static/images/gamebirds.png" alt="Birds of Prey Icon">
+            <span>Back to Gamebirds</span>
+        </a>
+    </section>
+
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Birdclopedia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

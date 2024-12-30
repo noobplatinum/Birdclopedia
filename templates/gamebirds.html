@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gamebirds</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <style>
+        body {
+            position: relative;
+            background-image: url('/static/images/grass.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: -1;
+        }
+
+        .description-text {
+            font-family: 'Georgia', serif;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100 text-white">
+
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/static/images/bird-icon.png" alt="Bird Icon" class="navbar-icon">
+            <h1 class="text-2xl font-bold">Birdclopedia</h1>
+        </div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/tree">Tree</a>
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <main class="flex flex-1">
+        <!-- Left Column -->
+        <div class="w-1/3 bg-cover bg-center relative" style="background-image: url('/static/images/gamebird.jpg')">
+            <div class="absolute bottom-8 left-8 text-white">
+                <h1 class="text-4xl font-bold">Gamebirds</h1>
+                <h2 class="text-xl italic">Domesticated Avians</h2>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="w-2/3 p-8 space-y-20 text-right flex flex-col justify-center">
+
+            <!-- Overview -->
+            <section>
+                <h2 class="text-3xl section-title mb-4">Overview</h2>
+                <p class="text-xl description-text">
+                    Gamebirds are birds that are raised in captivity for the purpose of hunting. They are known for their <br>
+                    delicious meat and are often served as a delicacy. Gamebirds are typically found in the wild, but <br>
+                    domesticated gamebirds are also common. They are known for their beautiful plumage and are often <br>
+                    kept as pets.
+                </p>
+            </section>
+
+            <!-- Defining Traits -->
+            <section>
+                <h2 class="text-3xl section-title mb-4">Defining Traits</h2>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="flex flex-col items-center p-4 border rounded-md shadow-sm">
+                        <img src="/static/images/omnivore.png" alt="Carnivorous Logo" class="w-16 h-16 object-cover rounded-full mb-2">
+                        <p class="font-medium text-xl">Omnivorous</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 border rounded-md shadow-sm">
+                        <img src="/static/images/land.png" alt="Land Oriented Logo" class="w-16 h-16 object-cover rounded-full mb-2">
+                        <p class="font-medium text-xl">Land Oriented</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 border rounded-md shadow-sm">
+                        <img src="/static/images/flocking.png" alt="Individualistic Logo" class="w-16 h-16 object-cover rounded-full mb-2">
+                        <p class="font-medium text-xl">Flocking</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notable Families -->
+            <section>
+                <h2 class="text-3xl section-title mb-4">Notable Families</h2>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="flex flex-col items-center p-4 border rounded-md shadow-sm">
+                        <img src="/static/images/chicken.png" alt="Family 1 Logo" class="w-16 h-16 object-cover rounded-full mb-2">
+                        <p class="font-medium text-xl">Phasianidae</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 border rounded-md shadow-sm">
+                        <img src="/static/images/grouse.png" alt="Family 2 Logo" class="w-16 h-16 object-cover rounded-full mb-2">
+                        <p class="font-medium text-xl">Tetraonidae</p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 border rounded-md shadow-sm">
+                        <img src="/static/images/guineafowl.png" alt="Family 3 Logo" class="w-16 h-16 object-cover rounded-full mb-2">
+                        <p class="font-medium text-xl">Numididae</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Members -->
+            <section>
+                <h2 class="text-3xl section-title mb-4">Members</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="{{ url_for('bird_family_member', family='gamebirds', member='pheasants') }}"
+                        class="relative h-48 rounded-md overflow-hidden shadow-md flex items-end p-4 text-white border border-white"
+                        style="background-image: url('/static/images/pheasant.png'); background-size: cover;">
+                        <h3 class="text-xl font-medium">Pheasants</h3>
+                    </a>
+                    <a href="{{ url_for('bird_family_member', family='gamebirds', member='turkeys') }}"
+                        class="relative h-48 rounded-md overflow-hidden shadow-md flex items-end p-4 text-white border border-white"
+                        style="background-image: url('/static/images/turkey.png'); background-size: cover;">
+                        <h3 class="text-xl font-medium">Turkeys</h3>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Birdclopedia. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

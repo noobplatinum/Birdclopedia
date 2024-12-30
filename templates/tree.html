@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Tree</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        body {
+            background-image: url('/static/images/leaves.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .tree-container, .facts-carousel {
+            position: relative;
+            z-index: 1;
+        }
+        </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/static/images/bird-icon.png" alt="Bird Icon" class="navbar-icon">
+            <h1 class="text-2xl font-bold">Birdclopedia</h1>
+        </div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/tree">Tree</a>
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <div class="tree-container">
+        <div class="tree-section mt-8">
+            <h1 class="text-4xl font-bold mb-4 text-white">Explore the Bird Family Tree</h1>
+            <div class="tree">
+            <a href="{{ url_for('bird_family', family='waterbirds') }}" class="branch waterbirds">
+                <img src="/static/images/waterbirds.png" alt="Water Birds Logo"> Water Birds
+            </a>
+            <a href="{{ url_for('bird_family', family='birdsofprey') }}" class="branch birdsofprey">
+                <img src="/static/images/birdsofprey.png" alt="Birds of Prey Logo"> Birds of Prey
+            </a>
+            <a href="{{ url_for('bird_family', family='songbirds') }}" class="branch songbirds">
+                <img src="/static/images/songbirds.png" alt="Songbirds Logo"> Songbirds
+            </a>
+            <a href="{{ url_for('bird_family', family='gamebirds') }}" class="branch gamebirds">
+                <img src="/static/images/gamebirds.png" alt="Game Birds Logo"> Game Birds
+            </a>
+            <a href="{{ url_for('bird_family', family='shorebirds') }}" class="branch shorebirds">
+                <img src="/static/images/shorebirds.png" alt="Shorebirds Logo"> Shorebirds
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <section class="facts-section mt-8">
+        <div class="facts-background">
+            <div class="facts-background-layer" id="backgroundLayer"></div>
+            <div class="facts-carousel max-w-2xl mx-auto">
+                <h2 class="text-2xl font-semibold mb-4 text-white">Did you know?</h2>
+                <div class="fact-container">
+                    <div class="fact-card" id="factCard">
+                        <h3 class="text-xl font-bold mb-2 text-white">Fact 1</h3>
+                        <p class="text-white">Birds are one of the most commonly known descendants of dinosaurs!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Birdclopedia. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const facts = [
+            {
+                title: "Fact 1",
+                text: "Birds are one of the most commonly known descendants of dinosaurs!",
+                background: "/static/images/bg2.jpg"
+            },
+            {
+                title: "Fact 2",
+                text: "For humans to be able to fly akin to birds, we would need wings the size of school buses!",
+                background: "/static/images/bg3.jpg"
+            },
+            {
+                title: "Fact 3",
+                text: "Birds aren't limited to the sky. There are birds which inhabit the underground!",
+                background: "/static/images/bg4.jpg"
+            }
+        ];
+    
+        let currentFact = 0;
+        const factCard = document.getElementById('factCard');
+        const backgroundLayer = document.getElementById('backgroundLayer');
+
+        backgroundLayer.style.backgroundImage = `url(${facts[currentFact].background})`;
+
+        function updateFact() {
+            factCard.style.opacity = '0';
+            backgroundLayer.style.opacity = '0';
+            
+            setTimeout(() => {
+                currentFact = (currentFact + 1) % facts.length;
+                factCard.querySelector('h3').textContent = facts[currentFact].title;
+                factCard.querySelector('p').textContent = facts[currentFact].text;
+                backgroundLayer.style.backgroundImage = `url(${facts[currentFact].background})`;
+                
+                factCard.style.opacity = '1';
+                backgroundLayer.style.opacity = '1';
+            }, 1000);
+        }
+        setInterval(updateFact, 4000);
+    </script>
+</html>

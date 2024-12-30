@@ -1,0 +1,354 @@
+/* Custom styles for Birdclopedia */
+:root {
+    --natural-green: #6B8E23;
+    --light-green: #98B461;
+    --dim-green: #556B2F;
+}
+
+.bg-natural-green {
+    background-color: var(--natural-green);
+    border: none;
+    box-shadow: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.tree-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    position: relative;
+}
+
+.tree {
+    background: url('/static/images/tree.jpg') no-repeat center center;
+    background-size: contain;
+    width: 700px;  /* Increased from 500px */
+    height: 700px; /* Increased from 500px */
+    position: relative;
+}
+
+.tree-section {
+    text-align: center;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
+}
+
+.facts-carousel {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.facts-section {
+    width: 100%;
+}
+
+.facts-background {
+    min-height: 400px;
+    height: 400px;
+    position: relative;
+    background: black;
+}
+
+.facts-background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+}
+
+.fact-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facts-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.branch {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.branch img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+.branch:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.branch.waterbirds { top: 15%; left: 15%; background: #4f83cc; }
+.branch.birdsofprey { top: 25%; right: 15%; background: #e63946; }
+.branch.songbirds { bottom: 30%; left: 20%; background: #df37f5; }
+.branch.gamebirds { bottom: 40%; right: 10%; background: #528d04; }
+.branch.shorebirds { top: 40%; left: 25%; transform: translateX(-50%); background: #ffdc3d; }
+
+
+.fun-facts {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.fact-card {
+    background: transparent;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    transition: opacity 1s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.fact-card h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.fact-card p {
+    font-size: 2rem;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-weight: 500;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/static/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* dark overlay for better text readability */
+}
+
+.hero > div {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    margin-bottom: 3rem;
+    margin-top: -4rem;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.tree-logo {
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.tree-logo {
+    width: 300px;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+}
+
+.hero h1 {
+    margin-bottom: 0.5rem;
+}
+
+.navbar {
+    background: var(--natural-green);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: white;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #E0EBC7;
+}
+
+.btn-primary {
+    background-color: var(--dim-green);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--light-green);
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+footer {
+    background-color: var(--natural-green);
+    color: white;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.btn:hover {
+    background-color: var(--light-green);
+}
+
+.btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.text-lg {
+    font-size: 1.1rem;
+}
+
+.text-xl {
+    font-size: 1.5rem;
+}
+
+.text-2xl {
+    font-size: 1.75rem;
+}
+
+.text-4xl {
+    font-size: 2.7rem;
+}
+
+.content-section {
+    background-color: var(--natural-green);
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.main {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: var(--dim-green);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn img {
+    width: 64px; /* Increased size */
+    height: 64px; /* Increased size */
+}

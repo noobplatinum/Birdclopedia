@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hummingbirds</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        .background-top {
+        background: url('/static/images/humming1.jpg') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+    }
+
+    .background-bottom {
+        background: url('/static/images/humming2.jpg') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/static/images/bird-icon.png" alt="Bird Icon" class="navbar-icon">
+            <h1 class="text-2xl font-bold">Birdclopedia</h1>
+        </div>
+        <div>
+            <a href="/" class="text-white">Home</a>
+            <a href="/tree" class="text-white">Tree</a>
+            <a href="/profile" class="text-white">Profile</a>
+            <a href="/logout" class="text-white">Logout</a>
+        </div>
+    </nav>
+
+    <header class="background-top"></header>
+    
+    <main class="w-full my-8 p-6 rounded-lg relative" style="background: url('/static/images/pink.jpg') no-repeat center center; background-size: cover;">
+        <div class="absolute inset-0 bg-black opacity-30 rounded-lg"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-white">Hummingbirds</h1>
+                <h2 class="text-xl italic text-white">Trochilidae</h2>
+            </div>
+            <hr class="mb-8">
+            <div class="grid grid-cols-3 gap-8 text-center">
+                <!-- Column 1: Description -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Description</h2>
+                    <p class="text-white text-lg">
+                        Hummingbirds are tiny, dazzling birds renowned for their vibrant plumage and incredible flying abilities. Using their long, slender bills and specialized tongues, they feed on nectar from flowers, playing a critical role in pollination. Their high metabolism requires them to eat almost constantly, consuming twice their body weight in food daily. With their ability to hover like helicopters, hummingbirds are a marvel of nature's engineering.
+                    </p>
+                </div>
+                <!-- Column 2: Specifications -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Specifications</h2>
+                    <ul class="list-disc list-inside text-white text-lg">
+                        <li><strong>Scientific Name:</strong> Archilochus colubris</li>
+                        <li><strong>Length:</strong> 7-13 cm</li>
+                        <li><strong>Weight:</strong> 2-5 gr</li>
+                        <li><strong>Coloration:</strong> Iridescent green and red or ruby tones, often with shimmering metallic hues</li>
+                        <li><strong>Habitat:</strong> Tropical and temperate regions, including forests, gardens, and meadows</li>
+                        <li><strong>Defining Feature:</strong> Rapid wing beats (50-80 beats per second) enabling hovering and backward flight</li>
+                    </ul>
+                </div>
+                <!-- Column 3: Fun Facts -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Fun Facts</h2>
+                    <div class="bg-transparent p-4 rounded-lg shadow-md mb-4 text-white text-lg">
+                        <h3 class="text-xl font-bold mb-2">Fact 1</h3>
+                        <p>A hummingbird’s heart can beat up to 1,260 times per minute during flight, making it one of the fastest of any animal.</p>
+                    </div>
+                    <div class="bg-transparent p-4 rounded-lg shadow-md text-white text-lg">
+                        <h3 class="text-xl font-bold mb-2">Fact 2</h3>
+                        <p>Some hummingbird species migrate incredible distances, with the Ruby-throated Hummingbird flying nonstop for up to 18 hours across the Gulf of Mexico.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="background-bottom">
+        <a href="/tree" class="btn">
+            <img src="/static/images/tree-logo.png" alt="Tree Icon">
+            <span>Back to Tree</span>
+        </a>
+        <a href="/tree/songbirds" class="btn">
+            <img src="/static/images/songbirds.png" alt="Birds of Prey Icon">
+            <span>Back to Songbirds</span>
+        </a>
+    </section>
+
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Birdclopedia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

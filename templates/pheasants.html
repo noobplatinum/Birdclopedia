@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pheasants</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        .background-top {
+        background: url('/static/images/pheasant1.jpg') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+    }
+
+    .background-bottom {
+        background: url('/static/images/pheasant2.jpg') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/static/images/bird-icon.png" alt="Bird Icon" class="navbar-icon">
+            <h1 class="text-2xl font-bold">Birdclopedia</h1>
+        </div>
+        <div>
+            <a href="/" class="text-white">Home</a>
+            <a href="/tree" class="text-white">Tree</a>
+            <a href="/profile" class="text-white">Profile</a>
+            <a href="/logout" class="text-white">Logout</a>
+        </div>
+    </nav>
+
+    <header class="background-top"></header>
+    
+    <main class="w-full my-8 p-6 rounded-lg relative" style="background: url('/static/images/grass.jpg') no-repeat center center; background-size: cover;">
+        <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-white">Pheasants</h1>
+                <h2 class="text-xl italic text-white">Phasianidae</h2>
+            </div>
+            <hr class="mb-8">
+            <div class="grid grid-cols-3 gap-8 text-center">
+                <!-- Column 1: Description -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Description</h2>
+                    <p class="text-white text-lg">
+                        Pheasants are ground-dwelling birds renowned for their vibrant plumage (in males) and gamebird status. They are strong but short-distance fliers, preferring to run from threats when possible. Known for their distinct calls and elaborate courtship displays, pheasants are iconic in many rural landscapes. These birds forage on the ground, feeding on seeds, grains, insects, and small plants.
+                    </p>
+                </div>
+                <!-- Column 2: Specifications -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Specifications</h2>
+                    <ul class="list-disc list-inside text-white text-lg">
+                        <li><strong>Scientific Name:</strong> Phasianus colchicus</li>
+                        <li><strong>Length:</strong> 50-90 cm</li>
+                        <li><strong>Weight:</strong> 0.7-1.3 kg</li>
+                        <li><strong>Coloration:</strong> Males are striking with a mix of iridescent greens, golds, and reds, often with a white neck ring, while females are mottled brown for camouflage</li>
+                        <li><strong>Habitat:</strong> Grasslands, farmlands, and woodlands, often near open fields</li>
+                        <li><strong>Defining Feature:</strong> Long, elegant tail feathers, particularly in males</li>
+                    </ul>
+                </div>
+                <!-- Column 3: Fun Facts -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Fun Facts</h2>
+                    <div class="bg-transparent p-4 rounded-lg shadow-md mb-4 text-white text-lg">
+                        <h3 class="text-xl font-bold mb-2">Fact 1</h3>
+                        <p>Male pheasants are highly polygamous, often gathering harems of multiple females during the breeding season.</p>
+                    </div>
+                    <div class="bg-transparent p-4 rounded-lg shadow-md text-white text-lg">
+                        <h3 class="text-xl font-bold mb-2">Fact 2</h3>
+                        <p>Pheasants rely on their impressive camouflage to evade predators, with chicks being capable of running shortly after hatching to stay hidden.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="background-bottom">
+        <a href="/tree" class="btn">
+            <img src="/static/images/tree-logo.png" alt="Tree Icon">
+            <span>Back to Tree</span>
+        </a>
+        <a href="/tree/gamebirds" class="btn">
+            <img src="/static/images/gamebirds.png" alt="Birds of Prey Icon">
+            <span>Back to Gamebirds</span>
+        </a>
+    </section>
+
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Birdclopedia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

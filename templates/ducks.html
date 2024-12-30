@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ducks</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        .background-top {
+        background: url('/static/images/duck1.jpg') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+    }
+
+    .background-bottom {
+        background: url('/static/images/duck2.jpg') no-repeat center center;
+        background-size: cover;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/static/images/bird-icon.png" alt="Bird Icon" class="navbar-icon">
+            <h1 class="text-2xl font-bold">Birdclopedia</h1>
+        </div>
+        <div>
+            <a href="/" class="text-white">Home</a>
+            <a href="/tree" class="text-white">Tree</a>
+            <a href="/profile" class="text-white">Profile</a>
+            <a href="/logout" class="text-white">Logout</a>
+        </div>
+    </nav>
+
+    <header class="background-top"></header>
+    
+    <main class="w-full my-8 p-6 rounded-lg relative" style="background: url('/static/images/azure.jpg') no-repeat center center; background-size: cover;">
+        <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-white">Ducks</h1>
+                <h2 class="text-xl italic text-white">Anatidae</h2>
+            </div>
+            <hr class="mb-8">
+            <div class="grid grid-cols-3 gap-8 text-center">
+                <!-- Column 1: Description -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Description</h2>
+                    <p class="text-white text-lg">
+                        Ducks are waterfowl that are highly adaptable to both freshwater and saltwater habitats. Known for their playful swimming and unique quacking sounds, they use their broad bills to filter food like aquatic plants, insects, and small fish from water. Ducks are social birds, often seen in flocks, and their migratory patterns span thousands of kilometers during seasonal changes.
+                    </p>
+                </div>
+                <!-- Column 2: Specifications -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Specifications</h2>
+                    <ul class="list-disc list-inside text-white text-lg">
+                        <li><strong>Scientific Name:</strong> Anas platyrhynchos</li>
+                        <li><strong>Length:</strong> 50-65 cm</li>
+                        <li><strong>Weight:</strong> 0.7-1.6 kg</li>
+                        <li><strong>Coloration:</strong> Often a mix of iridescent greens, browns, and whites, with males being more vibrant</li>
+                        <li><strong>Habitat:</strong> Wetlands, ponds, rivers, lakes, and coastal regions</li>
+                        <li><strong>Defining Feature:</strong> Webbed feet for swimming and a broad, flat bill for foraging</li>
+                    </ul>
+                </div>
+                <!-- Column 3: Fun Facts -->
+                <div>
+                    <h2 class="text-2xl font-semibold underline mb-4 text-white">Fun Facts</h2>
+                    <div class="bg-transparent p-4 rounded-lg shadow-md mb-4 text-white text-lg">
+                        <h3 class="text-xl font-bold mb-2">Fact 1</h3>
+                        <p>Ducks have waterproof feathers due to a special oil produced by a gland near their tails, which they spread during preening.</p>
+                    </div>
+                    <div class="bg-transparent p-4 rounded-lg shadow-md text-white text-lg">
+                        <h3 class="text-xl font-bold mb-2">Fact 2</h3>
+                        <p>Some duck species, like the Harlequin Duck, can thrive in fast-moving mountain streams and are known to dive up to 20 meters underwater to forage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="background-bottom">
+        <a href="/tree" class="btn">
+            <img src="/static/images/tree-logo.png" alt="Tree Icon">
+            <span>Back to Tree</span>
+        </a>
+        <a href="/tree/waterbirds" class="btn">
+            <img src="/static/images/waterbirds.png" alt="Birds of Prey Icon">
+            <span>Back to Waterbirds</span>
+        </a>
+    </section>
+
+    <footer class="footer text-center py-4">
+        <p>&copy; 2024 Birdclopedia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

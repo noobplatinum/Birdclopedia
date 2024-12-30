@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Birdclopedia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        body {
+            background-image: url('/static/images/bg4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .form-container {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="form-container bg-white p-8 rounded-lg shadow-lg w-[1200px]">
+        <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="mb-4 text-sm text-{{ 'red-500' if category == 'error' else 'green-500' }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" name="username" id="username" class="mt-1 p-2 w-full border rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" name="password" id="password" class="mt-1 p-2 w-full border rounded-md">
+            </div>
+            <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">
+                Login
+            </button>
+        </form>
+
+        <p class="text-center mt-4 text-sm">
+            Don't have an account? 
+            <a href="{{ url_for('register') }}" class="text-green-600 hover:underline">Register</a>
+            or
+            <a href="{{ url_for('index') }}" class="text-green-600 hover:underline">Return Home</a>
+        </p>
+    </div>
+</body>
+</html>
